@@ -19,6 +19,8 @@ window.addEventListener("message", function (event) {
             $(".info-div").show();
         } else if (type === "shop") {
             $(".info-div").show();
+        } else if (type === "corpse") {
+            $(".info-div").show();
         }
 
         $(".ui").fadeIn();
@@ -334,34 +336,83 @@ $(document).ready(function () {
 
             if (type === "trunk" && itemInventory === "second") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/TakeFromTrunk", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/TakeFromTrunk", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/TakeFromTrunk", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             } else if (type === "shop" && itemInventory === "second") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/BuyItem", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/BuyItem", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/BuyItem", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             } else if (type === "property" && itemInventory === "second") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/TakeFromProperty", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/TakeFromProperty", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/TakeFromProperty", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             } else if (type === "storage" && itemInventory === "second") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/TakeFromStorage", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/TakeFromStorage", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/TakeFromStorage", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             } else if (type === "player" && itemInventory === "second") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/TakeFromPlayer", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/TakeFromPlayer", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+
+				} else {
+					$.post("http://esx_inventoryhud/TakeFromPlayer", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
+            } else if (type === "corpse" && itemInventory === "second") {
+				disableInventory(500);
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/TakeFromCorpse", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/TakeFromCorpse", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             }
         }
     });
@@ -373,28 +424,71 @@ $(document).ready(function () {
 
             if (type === "trunk" && itemInventory === "main") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/PutIntoTrunk", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/PutIntoTrunk", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/PutIntoTrunk", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             } else if (type === "property" && itemInventory === "main") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/PutIntoProperty", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/PutIntoProperty", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+
+				} else {
+					$.post("http://esx_inventoryhud/PutIntoProperty", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             } else if (type === "storage" && itemInventory === "main") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/PutIntoStorage", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/PutIntoStorage", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/PutIntoStorage", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             } else if (type === "player" && itemInventory === "main") {
                 disableInventory(500);
-                $.post("http://esx_inventoryhud/PutIntoPlayer", JSON.stringify({
-                    item: itemData,
-                    number: parseInt($("#count").val())
-                }));
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/PutIntoPlayer", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/PutIntoPlayer", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+					
+				}
+            } else if (type === "corpse" && itemInventory === "main") {
+				disableInventory(500);
+				if (parseInt($("#count").val()) == 0) {
+					$.post("http://esx_inventoryhud/PutOnCorpse", JSON.stringify({
+						item: itemData,
+						number: itemData.count
+					}));
+				} else {
+					$.post("http://esx_inventoryhud/PutOnCorpse", JSON.stringify({
+						item: itemData,
+						number: parseInt($("#count").val())
+					}));
+				}
             }
         }
     });
