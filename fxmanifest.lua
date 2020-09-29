@@ -18,7 +18,8 @@ client_scripts {
   "client/shops.lua",
   "client/storage.lua",
   "locales/*.lua",
-  "config.lua"
+  "config.lua",
+  "client/corpse.lua"
 }
 
 server_scripts {
@@ -26,7 +27,8 @@ server_scripts {
   "server/main.lua",
   "server/storage.lua",
   "locales/*.lua",
-  "config.lua"
+  "config.lua",
+  "server/corpse.lua"
 }
 
 files {
