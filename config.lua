@@ -7,4 +7,4 @@ Config.ExcludeAccountsList = {"bank"} -- List of accounts names to exclude from 
 Config.OpenControl = 289 -- Key for opening inventory. Edit html/js/config.js to change key for closing it.
 
 -- List of item names that will close ui when used
-Config.CloseUiItems = {"lighter", "tunerchip", "cigarette", "rarecigar", "cigar", "fixkit", "fixkit_large", "cloth", "notepad", "lotteryticket", "lockpick", "fishingrod", "crowbar", "transmitter", "binoculars", "headbag", "dice", "bulletproof_vest", "medikit", "bandage", "vicodin", "gauze", "morphine"}
+Config.CloseUiItems = {"radio", "lighter", "tunerchip", "cigarette", "rarecigar", "cigar", "fixkit", "fixkit_large", "cloth", "notepad", "lotteryticket", "lockpick", "fishingrod", "crowbar", "transmitter", "binoculars", "headbag", "dice", "bulletproof_vest", "medikit", "bandage", "vicodin", "gauze", "morphine"}
